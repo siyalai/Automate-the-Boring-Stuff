@@ -87,4 +87,43 @@ newdict[key] = value #adds key-value pair into dict
 # to print cleaner display of items in dict use: pprint.pprint(dict)
 # to obtain prettified text as a string value instead of displaying it on screen call: prinnt(pprint.pformat(dict))
 
-# MANIPULATING STRINGS
+# 6 MANIPULATING STRINGS
+# escape characters
+# raw string: ignores all escape characters and prints any backslash in string, place an r before beginning quotation mark
+# multiline stringn with triple quotes instead of /n
+# multiline comment with triple quotes
+# string interpolation 
+    name = 'Al'
+    age = 40
+    print('My name is %s. I am %s years old.' % (name, age))
+# f-strings: instead of %s, expressions placed directly inside braces and f prefix
+    name = 'Al'
+    age = 40
+    print(f'My name is {name}. Next year I will be {age + 1}.')
+# upper(), lower(), isupper(), islower(), isalpha(), isalnum(), isdecimal(), isspace() and istitle() methods
+# startswith() and endswith() methods return True if string value they're called on begins/ends with string passed to the method
+# join() method: used to join a list of strings into a single string value, called on a string, gets passed a list of strings, and returns a string
+     ', '.join(['cats', 'rats', 'bats']) -> 'cats, rats, bats'
+     ' '.join(['My', 'name', 'is', 'Simon']) -> 'My name is Simon'
+# split() method: called on a string value and returns a list of strings, by default split wherever whitespace characters are found, can pass a delimiter string to  split() method to specify a different string to split upon
+    'MyABCnameABCisABCSimon'.split('ABC') -> ['My', 'name', 'is', 'Simon']
+# passing splt() the argument /n will split multiline string along the newlines and return a list 
+# partition(): split string into the text before and after a separator string, returns a tuple of three substrings for the “before,” “separator,” and “after” substring, only splits string in first instance of occurence
+    'Hello, world!'.partition('o') -> ('Hell', 'o', ', world!')
+    If separator string not found, the first string returned in tuple will be entire string, the other two strings will be empty
+# can use  multiple assignment trick to assign the three returned strings to three variables
+    before, sep, after = 'Hello, world!'.partition(' ')
+    before -> 'Hello,'
+    after -> 'world!'
+# rjust() and ljust(): return a padded version of the string they are called on, with spaces inserted to justify the text. The first argument to both methods is an integer length for the justified string. An optional second argument to rjust() and ljust() will specify a fill character other than a space character
+    'Hello'.rjust(10) -> '     Hello'
+    'Hello'.ljust(20, '-') -> 'Hello---------------'
+# center() string method: centers the text rather than justifying it to the left or right
+    'Hello'.center(20, '=') -> '=======Hello========'
+# remove whitespace with strip(), rstrip(), and lstrip(): strip() will return new string without any whitespace at beginning or end, lstrip() and rstrip() methods removes whitespace from left and right ends
+# optionally, a string argument will specify which characters on the ends should be stripped, order of characters in the string passed to strip() does not matter: strip('ampS') will do the same thing as strip('Spam')
+    spam = 'SpamSpamBaconSpamEggsSpamSpam', spam.strip('ampS') -> 'BaconSpamEggs'
+# use ord() to get the code point of a one-character string, and chr() to get the one-character string of an integer code point
+# pyperclip.copy and pypercli.paste
+
+
